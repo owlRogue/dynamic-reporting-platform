@@ -8,7 +8,7 @@ var sheet_title;
 
 var sheet = [
   (defaultSheet = {
-      sheet_ID: "",
+      sheet_ID: '',
       sheet_range: [''],
       sheet_title: ''
   }),
@@ -18,9 +18,9 @@ var sheet = [
       sheet_title: ''
   }),
   (sheet2 = {
-      sheet_ID: '',
-      sheet_range: [''],
-      sheet_title: ''
+    sheet_ID: '18gIUdXsYIP_mHjefCgemHzqOz3jJiolLzkAWuiRGtBs',
+    sheet_range: ['A:C'],
+    sheet_title: 'TrumpTweets'
   }),
   (sheet3 = {
       sheet_ID: '1HK8EjM8FiBzu2gMaDlsi_Fd92fjx4rG7X1VTW48pP6Q',
