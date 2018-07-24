@@ -36,10 +36,5 @@ var sheet = [
       sheet_ID: '1KbuidBzpeH_i6X-1QoXgxcyi2PoldMyiBtqvRX_OuAQ',
       sheet_range: ['A1:Z1000'],
       sheet_title: 'StressTestingBigData'
-  }),
-  (sheet7 = {
-      sheet_ID: '1hV5e_pg2rvRZJJw7-eeEqEwnYeXuGeI-w10y4ydxJVE',
-      sheet_range: ['A:E'],
-      sheet_title: 'KoltOwns'
   })
 ];
