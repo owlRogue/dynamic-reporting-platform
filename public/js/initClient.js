@@ -5,7 +5,7 @@ function initClient() {
   $("#instructions").addClass("instructions");
   // const API_KEY = process.env['gapi_Key'];
   // const API_KEY = credentials.gapi_Key; // LOCAL ENV
-  const CLIENT_ID = process.env['gapi_Client'];
+  // const CLIENT_ID = process.env['gapi_Client'];
   // const CLIENT_ID = credentials.gapi_Client; // LOCAL ENV
   const SCOPE = "https://www.googleapis.com/auth/spreadsheets";
   gapi.client
