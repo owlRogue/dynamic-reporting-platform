@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--python -m SimpleHTTPServer 8000-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporting Platform v2</title>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.0.0/journal/bootstrap.min.css" /> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
+
+    <!-- ERROR CHECK SCRIPTS -->
+    <script type="text/javascript" src="../../error-checks/js-file-load.js"></script>
+    
+    <!-- CREDENTIALS FILES (set up credentials/*.template.* files) -->
+    <script type="text/javascript" src="../../credentials/Keys.js"></script>
+    <script type="text/javascript" src="../../credentials/Sheets.js"></script>
+    
+    <!-- STYLING -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans:100,400,600,700">
+    <link href="css/scorecard-style.css" rel="stylesheet">
+
+    <!-- JQUERY -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="https://apis.google.com/js/api.js"></script>
+
+</head>
+
+<style></style>
+
+<body>
+
+    <!-- JAVASCRIPT APP-SPECIFIC SCRIPTS -->
+    <script type="text/javascript" src="js/conditionalSettings.js"></script>
+    <script type="text/javascript" src="js/initClient.js"></script>
+    <script type="text/javascript" src="js/makeGAPIcall.js"></script>
+    <script type="text/javascript" src="js/renderFilters.js"></script>
+    <script type="text/javascript" src="js/conditionalFormat.js"></script>
+    <script src="src/table2csv.js"></script>
+    <script type="text/javascript" src="js/renderTable.js"></script>
+    <script type="text/javascript" src="js/tabletocsv.js"></script>
+    <script type="text/javascript" src="js/sortTable.js"></script>
+    <script type="text/javascript" src="js/searchFilter.js"></script>
+
+    <navbar class="navbar" id="navbar">
+        <button id="signin-button" onclick="handleSignInClick()">Sign In</button> 
+    <!-- CONVERT ME ^^ to dropdown Called "Connect Source" -->
+    <!-- will list other API methods eventually... -->
+        <!-- <div id="downloads"></div> -->
+    </navbar>
+
+    <!-- <div class="jumbotron"> -->
+        <h2 id="reportTitle"></h2>
+        <div id='input-filters' class='hide'>
+        <div id="temp-all-filters">
+            Filters
+            <br>
+            </div>
+        <!-- <div id="dimension-filters">
+            Dimensions
+            <br>
+        </div>
+        <br>
+        <div id="metric-filters">
+            Metrics
+            <br>
+        </div>
+        <div id="other-filters">
+            Other Filters
+            <br>
+        </div> -->
+    </div>
+<!-- </div> -->
+
+    <div class="table-responsive-lg">
+        <table class="table" id="theTable">
+            <div id="instructions"></div>
+            <!--BOOTSTRAP CLASS-->
+            <thead id="tableHead">
+                <tr id="headerRow" class="header"></tr>
+            </thead>
+            <tbody id=tableBody>
+            </tbody>
+        </table>
+    </div>
+
+
+</body>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        // credentials;
+        let results;
+        let values;
+        sheet_ID;
+        sheet_range;
+        sheet_title;
+        let defaultSheet;
+        let thisSheet;
+        let buttonTitle;
+        let buttonSheetID;
+        let buttonSheetRange;
+
+        // Generate buttons in navbar from looping through the 'sheet' object array in makeAPIcall.js:
+        for (i = 0; i < sheet.length; i++) {
+
+            thisSheet = {
+                sheet_ID: sheet[i].sheet_ID,
+                sheet_range: sheet[i].sheet_range,
+                sheet_title: sheet[i].sheet_title
+            };
+
+            rawTitle = thisSheet.sheet_title;
+            buttonTitle = rawTitle.replace(/[-]/g, '')
+                .trim()
+                .replace(/ /g, '-');
+            buttonSheetID = thisSheet.sheet_ID;
+            buttonSheetRange = thisSheet.sheet_range;
+
+            const sheetBtn = $('<button>')
+                .addClass('sheet-button ' + buttonTitle)
+                .text(rawTitle)
+                .appendTo('.navbar')
+                .data("sheetInfo", {
+                    id: buttonSheetID,
+                    range: buttonSheetRange,
+                    title: buttonTitle
+            });
+        };
+
+        // Set button routes:
+        $('.sheet-button').on("click", function callTable() {
+            sheet_ID = $(this).data("sheetInfo").id;
+            sheet_range = $(this).data("sheetInfo").range;
+            sheet_title = $(this).data("sheetInfo").title;
+            event.preventDefault();
+            $('#headerRow').empty();
+            $('#tableBody').empty();
+            $('h2').empty();
+            makeApiCall();
+            $('h2').append(sheet_title);
+            $('#input-filters').removeClass('legend-hide');
+        });
+
+        // Hide filters when Legend sheet is displayed:
+        $('.Legend').on("click", function hideLegendFilters() {
+            $('#input-filters').addClass('legend-hide');
+        });
+        // in future, make dynamic by creating show_legend value in sheet object
+
+    });
+    // END DOCUMENT READY
+</script>
+
+<script>
+    handleClientLoad();
+</script>
+
+</body>
+
+</html>

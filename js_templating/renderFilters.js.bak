@@ -1,0 +1,41 @@
+function renderFilters(filters) {
+
+    // Generate filters:
+    const dimensionDiv = $('#dimension-filters');
+    console.log("dimension div exists: "+dimensionDiv);
+    const metricDiv = $('#metric-filters');
+    
+    let input$; // console.log(input$);
+    // let searchKey$ = $('.search-key'); // console.log(searchKey$);
+    
+    const index = $('.indextitle');
+    const dimension$ = $('input.dimension');
+    const formatted$ = $('input.formatted-metric');
+    
+    $(index).each(function (i) {
+        const inputs = $('input')
+            .addClass('search-key')
+
+            .attr('type', 'text')
+            .attr('name', $(this).text())
+            .attr('id', 'tableInput' + [i])
+            .attr('placeholder', 'search by ' + $(this).text().replace(/[%:]/g, '').trim())
+            .addClass($(this).text().replace(/[%: ]/g, '').trim() + 'Filter')
+            .addClass($(this).text().replace(/[%:]/g, '').replace(/[ ]/g, '-').trim())
+            .attr('onkeyup', 'searchAll()');
+            // .addClass('search-key');
+                
+                $(dimension$).appendTo(dimensionDiv);
+                // $(dimension$).appendTo(dimensionDiv);
+                // $(formatted$).appendTo(metricDiv);
+        });
+
+        //////////////////// DEBUGGING ZONE:  //////////////////////////////////////////////////////////////
+        
+        // console.log("dimension div is: "+dimensionDiv);
+
+};
+
+
+// ERROR CHECK FEATURE: logs file loaded to console
+logFile();

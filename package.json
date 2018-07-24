@@ -1,0 +1,30 @@
+{
+  "name": "GAPI-v2",
+  "version": "1.0.0",
+  "description": "Before this app can be run (atm), credentials must be set up.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bigminer106/GAPI-v2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bigminer106/GAPI-v2/issues"
+  },
+  "homepage": "https://github.com/Bigminer106/GAPI-v2#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "bootstrap": "^3.3.7",
+    "express": "^4.16.3",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.3",
+    "table2csv": "^1.0.0",
+    "tableexport": "^5.0.2"
+  }
+}
