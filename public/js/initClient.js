@@ -10,8 +10,8 @@ function initClient() {
   const SCOPE = "https://www.googleapis.com/auth/spreadsheets";
   gapi.client
     .init({
-      apiKey: NODE_ENV['API_KEY'],
-      clientId: NODE_ENV['CLIENT_ID'],
+      apiKey: process.env.API_KEY,
+      clientId: process.env.CLIENT_ID,
       scope: SCOPE,
       discoveryDocs: [
         "https://sheets.googleapis.com/$discovery/rest?version=v4"

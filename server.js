@@ -22,6 +22,7 @@ app.use(express.static("public"));
 // MONGODB Connection
 // =============================================================
 // var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/eligend"
+// var G_ENV = process.env.G_ENV || "mongodb://localhost/eligend"
 
 // Connect to the Mongo DB
 // mongoose.connect("mongodb://localhost/eligend");
