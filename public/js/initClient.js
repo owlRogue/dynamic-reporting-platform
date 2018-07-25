@@ -4,7 +4,13 @@ function initClient() {
   $("#instructions").text("authenticating credentials...");
   $("#instructions").addClass("instructions");
   const API_KEY = "";
-  // const API_KEY = credentials.gapi_Key; // LOCAL ENV
+  
+  // Heroku: https://dashboard.heroku.com/apps/dynamic-reporting-platform/settings
+    // Config Vars
+    // Config vars change the way your app behaves. In addition to creating your own, some add-ons come with their own.
+    // const API_KEY = credentials.gapi_Key; // LOCAL ENV
+
+
   const CLIENT_ID = "636126207964-eu6thv1vbffi8g7t0smvstctlgmmb6t6.apps.googleusercontent.com";
   // const CLIENT_ID = credentials.gapi_Client; // LOCAL ENV
   const SCOPE = "https://www.googleapis.com/auth/spreadsheets";
