@@ -1,9 +1,9 @@
-
-function conditionalFormatting() {
+var conditionalFormatting = () => {
 
     console.log('metric-1'.condition);
     console.log(settings);
     console.log(conditions);
+    // console.log('.formatted');
     let status;
     let cellNum;
     let exceptional
@@ -93,15 +93,18 @@ function conditionalFormatting() {
 
         $(!'.indextitle').addClass(status);
         $(this).addClass(status);
+        
+        
+        
     });
+    var formattedMetric = $('.indextitle.formatted');
+    console.log(formattedMetric);
 
 };
 
 // // Conditional formatting class setting:
-// formattedMetric = $('.formatted');
-//     formattedMetric$ = $(formattedMetric);
-//     // console.log(formattedMetric);
-//     // console.log(formattedMetric$);
+// var formattedMetric$ = $(formattedMetric);
+    // console.log(formattedMetric$);
 // const KPI = [];
 // var KPIs = [];
 // settings;
@@ -136,30 +139,30 @@ function conditionalFormatting() {
 // formatAssignment ();
 
 
-// function conditionAssignment() {
-//     for (i = 0; i < setup.length; i++) {
-//         let KPIs = setup[i];
-//         // console.log(KPIs);
-//         KPIMetric = KPIs.metric;
-//         KPICondition = KPIs.condition;
-//         KPIOperator = KPIs.operator;
-//         KPITarget = KPIs.target;
-//         KPIValueParams = KPIs.valueParams;
-//         KPITitle = KPIs.className;
-//         // console.log(KPIs);
-//         console.log(KPIMetric);
-//         console.log(KPICondition);
-//         console.log(KPIOperator);
-//         console.log(KPITarget);
-//         console.log(KPIValueParams);
-//         console.log(KPITitle);
+function conditionAssignment() {
+    for (i = 0; i < setup.length; i++) {
+        let KPIs = setup[i];
+        // console.log(KPIs);
+        KPIMetric = KPIs.metric;
+        KPICondition = KPIs.condition;
+        KPIOperator = KPIs.operator;
+        KPITarget = KPIs.target;
+        KPIValueParams = KPIs.valueParams;
+        KPITitle = KPIs.className;
+        // console.log(KPIs);
+        console.log(KPIMetric);
+        console.log(KPICondition);
+        console.log(KPIOperator);
+        console.log(KPITarget);
+        console.log(KPIValueParams);
+        console.log(KPITitle);
 
-//         // console.log(hyph.includes(KPITitle));
-//         // console.log(formattedMetric.hyph);
-//     }
-// }; // LOOPING PROPERLY
+        // console.log(hyph.includes(KPITitle));
+        // console.log(formattedMetric.hyph);
+    }
+}; // LOOPING PROPERLY
 
-// conditionAssignment();
+conditionAssignment();
 
 // // Sets condition logic:
 // const cellText = this.innerHTML;
