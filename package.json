@@ -1,6 +1,6 @@
 {
-  "name": "GAPI-v2",
-  "version": "1.0.0",
+  "name": "dynamic-reporting-platform",
+  "version": "2.7.0",
   "description": "Before this app can be run (atm), credentials must be set up.",
   "main": "server.js",
   "scripts": {
@@ -9,15 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Bigminer106/GAPI-v2.git"
+    "url": "git+https://github.com/owlRogue/dynamic-reporting-platform"
   },
   "keywords": [],
-  "author": "",
+  "author": "Koltyn Palmer",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Bigminer106/GAPI-v2/issues"
-  },
-  "homepage": "https://github.com/Bigminer106/GAPI-v2#readme",
+  "homepage": "https://github.com/owlRogue/dynamic-reporting-platform/blob/master/README.md",
   "dependencies": {
     "body-parser": "^1.18.3",
     "bootstrap": "^3.3.7",
