@@ -8,28 +8,33 @@ var sheet_title;
 
 var sheet = [
     (defaultSheet = {
-        sheet_ID: "1GVluuYF9hAgCu5fH9nUqbrQsb-j-r8kLaRFSKE0thi8",
-        sheet_range: ["Legend - Source!A1:F37"],
-        sheet_title: "Legend"
-      }),
-      (sheet1 = {
-        sheet_ID: "1M9B-5Y5y5acwdulaIZ9-DKv7HOhJg9ur79rqB4FfctE",
-        sheet_range: ["A1:M300"],
-        sheet_title: "Team MtD ScoreCard"
-      }),
-      (sheet2 = {
-        sheet_ID: "1SB_o8MuffgbFURB_YxxzqXpaFLrYsvAEUWovrSDjxFE",
-        sheet_range: ["A1:R200"],
-        sheet_title: "Agent MtD"
-      }),
-      (sheet3 = {
-        sheet_ID: "1_iIXq7Pj9OEqgXpJfVP6nIw5j_oN-QvttqDm5D0BkeY",
-        sheet_range: ["A1:R200"],
-        sheet_title: "Agent EoD"
-      }),
-      (sheet4 = {
-        sheet_ID: "1OLDvp6kvyCPZC_izDchq7bgcRQ9r_8CgrKPMuQbNlsM",
-        sheet_range: ["A1:R200"],
-        sheet_title: "Agent WtD"
-      })
+        sheet_ID: '1-X8bEkk1J-MXnLor-J7x704QBf6Cpf8tYRNVf7qX8m0',
+        sheet_range: ['A:P'],
+        sheet_title: 'SkiResorts'
+    }),
+    (sheet1 = {
+        sheet_ID: '1-X8bEkk1J-MXnLor-J7x704QBf6Cpf8tYRNVf7qX8m0',
+        sheet_range: ['A:G'],
+        sheet_title: 'FIFA2018WorldCup'
+    }),
+    (sheet2 = {
+      sheet_ID: '18gIUdXsYIP_mHjefCgemHzqOz3jJiolLzkAWuiRGtBs',
+      sheet_range: ['A:C'],
+      sheet_title: 'TrumpTweets'
+    }),
+    (sheet3 = {
+        sheet_ID: '1HK8EjM8FiBzu2gMaDlsi_Fd92fjx4rG7X1VTW48pP6Q',
+        sheet_range: ['A:E'],
+        sheet_title: 'KoltSharedOn'
+    }),
+    (sheet5 = {
+        sheet_ID: '1l1GyTc65N-afxhIJ-9O7eogKYdOIUvZQw1m1D9IWoyQ',
+        sheet_range: ['A1:Q100'],
+        sheet_title: 'DummyScoreCard'
+    }),
+    (sheet6 = {
+        sheet_ID: '1KbuidBzpeH_i6X-1QoXgxcyi2PoldMyiBtqvRX_OuAQ',
+        sheet_range: ['A1:Z1000'],
+        sheet_title: 'StressTestingBigData'
+    })
 ];

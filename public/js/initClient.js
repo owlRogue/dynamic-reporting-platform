@@ -3,11 +3,12 @@ function initClient() {
 
   $("#instructions").text("authenticating credentials...");
   $("#instructions").addClass("instructions");
-  const API_KEY = "";
   
   // Heroku: https://dashboard.heroku.com/apps/dynamic-reporting-platform/settings
-    // Config Vars
-    // Config vars change the way your app behaves. In addition to creating your own, some add-ons come with their own.
+  // Config Vars
+  // Config vars change the way your app behaves. In addition to creating your own, some add-ons come with their own.
+  
+  const API_KEY = "AIzaSyDmahkvaiX7_UfvhIeneSkESNKR4MhDRbM";
     // const API_KEY = credentials.gapi_Key; // LOCAL ENV
 
 
@@ -42,10 +43,9 @@ function updateSignInStatus() {
   }
 }
 
-function handleSignInClick() {
-  gapi.auth2.getAuthInstance().signIn();
-}
-
 // ERROR CHECK FEATURE: logs file loaded to console
 logFile();
 
+function handleSignInClick() {
+  gapi.auth2.getAuthInstance().signIn();
+}
