@@ -8,7 +8,7 @@ function initClient() {
   // Config Vars
   // Config vars change the way your app behaves. In addition to creating your own, some add-ons come with their own.
   
-  const API_KEY = "AIzaSyDmahkvaiX7_UfvhIeneSkESNKR4MhDRbM";
+  const API_KEY = "";
     // const API_KEY = credentials.gapi_Key; // LOCAL ENV
 
 
@@ -43,9 +43,10 @@ function updateSignInStatus() {
   }
 }
 
-// ERROR CHECK FEATURE: logs file loaded to console
-logFile();
 
 function handleSignInClick() {
   gapi.auth2.getAuthInstance().signIn();
 }
+
+// ERROR CHECK FEATURE: logs file loaded to console
+logFile();
